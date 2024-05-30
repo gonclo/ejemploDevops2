@@ -46,13 +46,6 @@ jobs:
         with:
           name: java-app
       
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D20839E5501E4C34B03E6C0DC566A898 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_37841D1040D940B9834E1044132C12FF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_00B482BC925A4E619C98CD2DA284AF50 }}
-
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -60,4 +53,7 @@ jobs:
           app-name: 'gonzaloclase'
           slot-name: 'stage'
           package: '*.jar'
+          publish-profile: ${{ secrets.appservices_Profile}}
+          
+          publish
           
