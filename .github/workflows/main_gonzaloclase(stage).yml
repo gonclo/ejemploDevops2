@@ -53,7 +53,6 @@ jobs:
           app-name: 'gonzaloclase'
           slot-name: 'stage'
           package: '*.jar'
-          publish-profile: ${{ secrets.appservices_Profile}}
-          
-          publish
+          publish-profile: ${{ secrets.APPSERVICES_PROFILE}}
+       
           
